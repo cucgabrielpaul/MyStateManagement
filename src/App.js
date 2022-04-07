@@ -6,7 +6,9 @@ import TenCounter from "./components/TenCounter";
 function App() {
   return (
     <div className="App">
-      <h1> My State Management </h1> <OneCounter />
+      <h1> My State Management </h1> 
+      <OneCounter />
+      <OneCounter />
       <FiveCounter />
       <TenCounter />
     </div>
