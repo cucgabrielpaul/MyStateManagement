@@ -1,15 +1,16 @@
-import { useState } from "react";
-import pubSub from "../store/PubSub";
+import { useState, useEffect } from "react";
 import useStore from "../store/Store";
 
 const useCounter = (event) => {
-    const [count, setCount] = useState(useStore.getState());
+  const [count, setCount] = useState(useStore.getState());
 
-    pubSub.subscribe(event, (data) => {
-        setCount(data);
+  useEffect(() => {
+    useStore.subscribe(event, (data) => {
+      setCount(data);
     });
+  }, [event]);
 
-    return count;
+  return count;
 };
 
 export default useCounter;
