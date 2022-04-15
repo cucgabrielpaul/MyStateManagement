@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react";
 import useStore from "../store/Store";
 
-const useCounter = (event) => {
+const useCounter = (firstEvent, secondEvent) => {
   const [count, setCount] = useState(useStore.getState());
 
   useEffect(() => {
-    useStore.subscribe(event, (data) => {
+    useStore.subscribe(firstEvent, secondEvent, (data) => {
       setCount(data);
     });
-  }, [event]);
+  }, [firstEvent, secondEvent]);
 
   return count;
 };

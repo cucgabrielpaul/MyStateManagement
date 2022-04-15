@@ -1,15 +1,15 @@
 const actions = {
-    increment(state, payload) {
-        state += payload;
+  increment(state, payload) {
+    state += payload;
 
-        return state;
-    },
+    return state;
+  },
 
-    decrement(state, payload) {
-        state -= payload;
+  decrement(state, payload) {
+    state -= payload;
 
-        return state;
-    },
+    return state;
+  },
 };
 
 export default actions;

@@ -1,11 +1,13 @@
 import React from "react";
 import useCounter from "../hooks/useCounter";
+import useToggle from "../hooks/useToggle";
 import useStore from "../store/Store";
 import { Box, Button, Typography } from "@mui/material";
-import { FaMinus, FaPlus } from "react-icons/fa";
+import { FaMinus, FaPlus, FaSubscript } from "react-icons/fa";
 
 const OneCounter = () => {
-  const count = useCounter("subscribe");
+  const count = useCounter("subscribe", "reset");
+  const toggle = useToggle();
 
   return (
     <Box
@@ -33,6 +35,24 @@ const OneCounter = () => {
         }}
       >
         <FaMinus />
+      </Button>
+      <Button
+        variant="contained"
+        color="error"
+        onClick={() => {
+          toggle();
+        }}
+      >
+        Subscribe
+      </Button>
+      <Button
+        variant="contained"
+        color="error"
+        onClick={() => {
+          useStore.reset("reset", 0);
+        }}
+      >
+        Reset
       </Button>
     </Box>
   );
