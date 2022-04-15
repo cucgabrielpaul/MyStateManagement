@@ -3,7 +3,7 @@ import useCounter from "../hooks/useCounter";
 import useToggle from "../hooks/useToggle";
 import useStore from "../store/Store";
 import { Box, Button, Typography } from "@mui/material";
-import { FaMinus, FaPlus, FaSubscript } from "react-icons/fa";
+import { FaMinus, FaPlus } from "react-icons/fa";
 
 const OneCounter = () => {
   const count = useCounter("subscribe", "reset");
