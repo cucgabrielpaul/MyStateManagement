@@ -7,7 +7,7 @@ import { FaMinus, FaPlus } from "react-icons/fa";
 
 const OneCounter = () => {
   const count = useCounter("subscribe", "reset");
-  const toggle = useToggle();
+  const [toggle, buttonStyle, name] = useToggle();
 
   return (
     <Box
@@ -38,12 +38,12 @@ const OneCounter = () => {
       </Button>
       <Button
         variant="contained"
-        color="error"
+        style={buttonStyle}
         onClick={() => {
           toggle();
         }}
       >
-        Subscribe
+        {name}
       </Button>
       <Button
         variant="contained"

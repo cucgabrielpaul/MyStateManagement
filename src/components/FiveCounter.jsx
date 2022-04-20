@@ -7,7 +7,7 @@ import useToggle from "../hooks/useToggle";
 
 const FiveCounter = () => {
   const count = useCounter("subscribe", "reset");
-  const toggle = useToggle();
+  const [toggle, buttonStyle, name] = useToggle();
 
   return (
     <Box
@@ -38,12 +38,12 @@ const FiveCounter = () => {
       </Button>
       <Button
         variant="contained"
-        color="error"
+        style={buttonStyle}
         onClick={() => {
           toggle();
         }}
       >
-        Subscribe
+        {name}
       </Button>
       <Button
         variant="contained"
